@@ -1,0 +1,54 @@
+
+{
+  "name": "ax-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AX Backend REST API built with Node.js, Express.js, TypeScript and PostgreSQL",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start:dev": "tsx src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test",
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bharathpeddi18/ax-backend.git"
+  },
+  "homepage": "https://github.com/Bharathpeddi18/ax-backend#readme",
+  "bugs": {
+    "url": "https://github.com/Bharathpeddi18/ax-backend/issues"
+  },
+  "keywords": [
+    "ax",
+    "backend",
+    "nodejs",
+    "express",
+    "typescript",
+    "postgresql",
+    "rest-api"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "pg": "^8.23.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "@types/pg": "^8.23.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

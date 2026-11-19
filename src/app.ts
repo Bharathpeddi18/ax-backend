@@ -19,6 +19,6 @@ app.get("/api/health", (_req, res) => {
   });
 });
 
-app.use("/api/students", studentsRoutes);
+app.use("/api", studentsRoutes);
 
 export default app;

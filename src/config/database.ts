@@ -4,6 +4,8 @@ import { Pool } from "pg";
 
 const isProduction = process.env.NODE_ENV === "production";
 
+console.log("Database Host:", process.env.DB_HOST ?? "NOT SET");
+
 export const pool = new Pool({
   host: process.env.DB_HOST,
   port: Number(process.env.DB_PORT ?? 5432),

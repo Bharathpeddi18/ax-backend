@@ -1,6 +1,8 @@
 
-import { Pool } from "pg";
 import "dotenv/config";
+import { Pool } from "pg";
+
+const isProduction = process.env.NODE_ENV === "production";
 
 console.log("Database Host:", process.env.DB_HOST ?? "NOT SET");
 
@@ -11,9 +13,9 @@ export const pool = new Pool({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   max: 10,
-  ssl: {
-    rejectUnauthorized: true,
-  },
+  ssl: isProduction
+    ? { rejectUnauthorized: true }
+    : false,
 });
 
 export async function connectDB() {

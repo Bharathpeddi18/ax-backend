@@ -9,9 +9,6 @@ export const pool = new Pool({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   max: 10,
-  ssl: {
-    rejectUnauthorized: true,
-  },
 });
 
 export async function connectDB() {

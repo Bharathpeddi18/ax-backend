@@ -18,15 +18,15 @@ app.get("/", (_req: Request, res: Response) => {
     success: true,
     message: "AX Backend REST API is running",
     endpoints: {
-      health: "GET /health or /api/health",
-      students: "GET /students or /api/students",
-      addStudent: "POST /add-student or /api/add-student",
+      health: "GET /api/health",
+      students: "GET /api/students",
+      addStudent: "POST /api/add-student",
     },
   });
 });
 
 // Health check endpoint (for Azure App Service / monitoring)
-app.get("/health", (_req: Request, res: Response) => {
+app.get("/api/health", (_req: Request, res: Response) => {
   res.json({
     success: true,
     message: "AX Backend is running",
@@ -34,6 +34,6 @@ app.get("/health", (_req: Request, res: Response) => {
   });
 });
 
-app.use("/", studentsRoutes);
+app.use("/api", studentsRoutes);
 
 export default app;

@@ -3,7 +3,7 @@ import { pool } from "../config/database.ts";
 
 const router = Router();
 
-router.get("students", async (_req, res, next) => {
+router.get("/students", async (_req, res, next) => {
   try {
     const result = await pool.query(
       "SELECT id, name, class_id, photo_id FROM students ORDER BY id"
@@ -19,7 +19,7 @@ router.get("students", async (_req, res, next) => {
 });
 
 // POST: Add a new student
-router.post("add-student", async (req, res, next) => {
+router.post("/add-student", async (req, res, next) => {
   try {
 
     const { name, class_id, photo_id } = req.body;

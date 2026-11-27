@@ -11,6 +11,7 @@ async function startServer() {
     app.listen(PORT, () => {
       console.log(`AX Backend running on port ${PORT}`);
     });
+    
   } catch (error) {
     console.error("Backend startup failed:", error);
     await pool.end();

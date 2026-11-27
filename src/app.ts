@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import studentsRoutes from "./routes/students.routes.ts";
+import contentManagementRoutes from './modules/content-management/routes.ts'
 
 const app = express();
 
@@ -18,22 +19,17 @@ app.get("/", (_req: Request, res: Response) => {
     success: true,
     message: "AX Backend REST API is running",
     endpoints: {
-      health: "GET /api/health",
+      getAnnouncements: 'GET /content-management/announcements',
+      postAnnouncements: 'POST /content-management/announcements',
+
       students: "GET /api/students",
       addStudent: "POST /api/add-student",
     },
   });
 });
 
-// Health check endpoint (for Azure App Service / monitoring)
-app.get("/api/health", (_req: Request, res: Response) => {
-  res.json({
-    success: true,
-    message: "AX Backend is running",
-    timestamp: new Date().toISOString(),
-  });
-});
+app.use('/content-management', contentManagementRoutes)
 
-app.use("/api", studentsRoutes);
+app.use('/api', studentsRoutes);
 
 export default app;

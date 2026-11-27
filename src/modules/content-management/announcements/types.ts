@@ -1,0 +1,11 @@
+export interface I_Announcement {
+    id: string
+    title: string
+    description: string
+    expiry_date: Date
+    is_archived: boolean
+    created_by: string
+    modified_by: string
+    created_at: Date
+    modified_at: Date
+}

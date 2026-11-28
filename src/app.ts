@@ -21,7 +21,7 @@ app.get("/", (_req: Request, res: Response) => {
   });
 });
 
-app.use('/content-management', contentManagementRoutes)
+app.use('/api/content-management', contentManagementRoutes)
 
 app.use('/api', studentsRoutes);
 

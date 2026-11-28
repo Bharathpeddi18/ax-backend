@@ -18,13 +18,6 @@ app.get("/", (_req: Request, res: Response) => {
   res.json({
     success: true,
     message: "AX Backend REST API is running",
-    endpoints: {
-      getAnnouncements: 'GET /content-management/announcements',
-      postAnnouncements: 'POST /content-management/announcements',
-
-      students: "GET /api/students",
-      addStudent: "POST /api/add-student",
-    },
   });
 });
 
